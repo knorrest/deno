@@ -15,6 +15,20 @@
         "name" : "function_lines_of_code_warning",
         "value" : 145
       }]
+    },
+    {
+      "matching_content_path": "cli/lsp/code_lens.rs",
+      "matching_content_path_doc": "test and app code threshold",
+      "rules": [
+        {
+          "name": "Large Method",
+          "weight": 1.0
+        }
+      ],
+       "thresholds" : [{
+        "name" : "function_nesting_depth_warning",
+        "value" : 8
+      }]
     }
   ]
 }
