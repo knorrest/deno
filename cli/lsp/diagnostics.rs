@@ -1365,7 +1365,6 @@ fn diagnose_resolution(
       to: doc_specifier.clone(),
     })
   }
-
   let mut diagnostics = vec![];
   match resolution {
     Resolution::Ok(resolved) => {
@@ -1938,6 +1937,12 @@ let c: number = "a";
 
   #[tokio::test]
   async fn duplicate_diagnostics_for_duplicate_imports() {
+
+    // a dummy loop to make large method worse
+    for a in b {
+      c.remove(&a);
+    }
+
     let (_, snapshot) = setup(
       &[(
         "a.ts",

@@ -1133,6 +1133,14 @@ mod tests {
 
   #[test]
   fn test_validate_registry_configuration() {
+
+    // some dummy extra lines
+    assert!(validate_config(&RegistryConfigurationJson {
+      version: 3,
+      registries: vec![],
+    })
+    .is_err());
+
     assert!(validate_config(&RegistryConfigurationJson {
       version: 3,
       registries: vec![],
